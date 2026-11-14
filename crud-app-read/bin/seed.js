@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Book = require('../models/book-model');
 
 const dbName = 'library-project-webmad0320';
-mongoose.connect(`mongodb://localhost/${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/${dbName}`, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const books = [
     {
